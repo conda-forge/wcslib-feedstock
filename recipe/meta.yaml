@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - wcsfix-test.patch # fix non-reproducible test code in 5.15
+    - no-x-tests.patch # avoid deluges of pgplot warnings
 
 build:
   number: 1

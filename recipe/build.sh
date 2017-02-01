@@ -16,7 +16,7 @@ configure_args=(
 
 ./configure "${configure_args[@]}" || { cat config.log ; exit 1 ; }
 make # note: Makefile is not parallel-safe
-PGPLOT_DEV=/null make check
+make check
 mkdir -p $PREFIX/share/man/man1
 make install
 
