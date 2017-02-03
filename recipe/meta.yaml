@@ -12,31 +12,33 @@ source:
   sha256: {{ sha256 }}
   patches:
     - wcsfix-test.patch # fix non-reproducible test code in 5.15
+    - no-x-tests.patch # avoid deluges of pgplot warnings
 
 build:
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: true
   skip: true  # [win]
 
 requirements:
-  # TO ADD: pgplot
   build:
     - cfitsio
     - flex
     - gcc  # [osx]
     - libgfortran  # [not win]
+    - pgplot 5.2.*  # [not win]
     - toolchain
   run:
     - cfitsio
     - libgfortran  # [not win]
+    - pgplot 5.2.*  # [not win]
 
 test:
   commands:
     # Main validation performed in 'make check' stage
     - test -f $PREFIX/lib/libwcs.so  # [linux]
     - test -f $PREFIX/lib/libwcs.dylib  # [osx]
-    - conda inspect linkages -p $PREFIX wcslib  # [not win]
-    - conda inspect objects -p $PREFIX wcslib  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/

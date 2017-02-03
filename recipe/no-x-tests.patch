@@ -1,0 +1,187 @@
+--- pgsbox/pgtest.f.orig	2017-02-01 18:15:05.237076214 -0500
++++ pgsbox/pgtest.f	2017-02-01 18:15:38.543212580 -0500
+@@ -60,7 +60,7 @@
+       TRC(2) = NAXIS(2) + 0.5
+ 
+ *      CALL PGBEG (0, '?', 1, 1)
+-      call pgbeg (0, '/xw', 1, 1)
++      call pgbeg (0, '/null', 1, 1)
+ 
+       CALL PGQINF ('TYPE', DEVTYP, J)
+       IF (DEVTYP.EQ.'PS'  .OR.
+--- pgsbox/cpgtest.c.orig	2017-02-01 18:16:35.922447509 -0500
++++ pgsbox/cpgtest.c	2017-02-01 18:16:41.646470944 -0500
+@@ -68,7 +68,7 @@
+   trc[0] = naxis[0] + 0.5f;
+   trc[1] = naxis[1] + 0.5f;
+ 
+-  strcpy(devtyp, "/XWINDOW");
++  strcpy(devtyp, "/NULL");
+   cpgbeg(0, devtyp, 1, 1);
+ 
+   j = 16;
+--- C/test/ttab3.c.orig	2017-02-01 18:17:02.905557986 -0500
++++ C/test/ttab3.c	2017-02-01 18:17:12.392596829 -0500
+@@ -74,7 +74,7 @@
+ 
+ 
+   /* PGPLOT initialization. */
+-  strcpy(text, "/xwindow");
++  strcpy(text, "/null");
+   cpgbeg(0, text, 1, 1);
+   cpgvstd();
+   cpgsch(0.7f);
+--- C/test/tcel2.c.orig	2017-02-01 18:17:23.881655083 -0500
++++ C/test/tcel2.c	2017-02-01 18:17:28.515678730 -0500
+@@ -106,7 +106,7 @@
+ 
+ 
+   /* PGPLOT initialization. */
+-  strcpy(text, "/xwindow");
++  strcpy(text, "/null");
+   cpgbeg(0, text, 1, 1);
+ 
+   /* Define pen colours. */
+--- C/test/tpih2.c.orig	2017-02-01 18:17:35.548714619 -0500
++++ C/test/tpih2.c	2017-02-01 18:17:40.353739139 -0500
+@@ -147,7 +147,7 @@
+   trc[0] = naxis[0] + 0.5f;
+   trc[1] = naxis[1] + 0.5f;
+ 
+-  strcpy(devtyp, "/XWINDOW");
++  strcpy(devtyp, "/null");
+   cpgbeg(0, devtyp, 1, 1);
+   cpgvstd();
+ 
+--- C/test/tspc.c.orig	2017-02-01 18:17:45.313764450 -0500
++++ C/test/tspc.c	2017-02-01 18:17:53.252804962 -0500
+@@ -69,7 +69,7 @@
+ 
+ 
+   /* PGPLOT initialization. */
+-  strcpy(text, "/xwindow");
++  strcpy(text, "/null");
+   cpgbeg(0, text, 1, 1);
+ 
+   naxisj = NSPEC;
+--- C/test/tcel1.c.orig	2017-02-01 18:17:59.633837524 -0500
++++ C/test/tcel1.c	2017-02-01 18:18:03.312856298 -0500
+@@ -80,7 +80,7 @@
+ 
+ 
+   /* PGPLOT initialization. */
+-  strcpy(text, "/xwindow");
++  strcpy(text, "/null");
+   cpgbeg(0, text, 1, 1);
+ 
+   /* Define pen colours. */
+--- C/test/ttab2.c.orig	2017-02-01 18:18:09.820889508 -0500
++++ C/test/ttab2.c	2017-02-01 18:18:14.562913706 -0500
+@@ -77,7 +77,7 @@
+ 
+ 
+   /* PGPLOT initialization. */
+-  strcpy(text, "/xwindow");
++  strcpy(text, "/null");
+   cpgbeg(0, text, 1, 1);
+   cpgvstd();
+   cpgsch(0.7f);
+--- C/test/tprj2.c.orig	2017-02-01 18:18:19.942941160 -0500
++++ C/test/tprj2.c	2017-02-01 18:18:22.991956719 -0500
+@@ -60,7 +60,7 @@
+ 
+ 
+   /* PGPLOT initialization. */
+-  strcpy(text, "/xwindow");
++  strcpy(text, "/null");
+   cpgbeg(0, text, 1, 1);
+ 
+   /* Define pen colours. */
+--- C/test/twcsmix.c.orig	2017-02-01 18:18:28.752986117 -0500
++++ C/test/twcsmix.c	2017-02-01 18:18:32.798006758 -0500
+@@ -93,7 +93,7 @@
+ 
+ 
+   /* PGPLOT initialization. */
+-  strcpy(text, "/xwindow");
++  strcpy(text, "/null");
+   cpgbeg(0, text, 1, 1);
+ 
+   /* Define pen colours. */
+--- Fortran/test/ttab3.f.orig	2017-02-01 18:18:44.853068274 -0500
++++ Fortran/test/ttab3.f	2017-02-01 18:18:49.710093059 -0500
+@@ -67,7 +67,7 @@
+ 
+ 
+ *     PGPLOT initialization.
+-      CALL PGBEG (0, '/xwindow', 1, 1)
++      CALL PGBEG (0, '/null', 1, 1)
+       CALL PGVSTD ()
+       CALL PGSCH (0.7)
+       CALL PGWNAD (-135.0, 135.0, -95.0, 140.0)
+--- Fortran/test/tspc.f.orig	2017-02-01 18:18:54.428117135 -0500
++++ Fortran/test/tspc.f	2017-02-01 18:18:59.610143579 -0500
+@@ -55,7 +55,7 @@
+       NFAIL = 0
+ 
+ *     PGPLOT initialization.
+-      CALL PGBEG (0, '/xwindow', 1, 1)
++      CALL PGBEG (0, '/null', 1, 1)
+ 
+       NAXISJ = NSPEC
+       CRPIXJ = NAXISJ/2 + 1
+--- Fortran/test/tcel1.f.orig	2017-02-01 18:19:03.945165700 -0500
++++ Fortran/test/tcel1.f	2017-02-01 18:19:06.830180422 -0500
+@@ -77,7 +77,7 @@
+ 
+ 
+ *     PGPLOT initialization.
+-      CALL PGBEG (0, '/xwindow', 1, 1)
++      CALL PGBEG (0, '/null', 1, 1)
+ 
+ *     Define pen colours.
+       CALL PGSCR (0, 0.00, 0.00, 0.00)
+--- Fortran/test/tpih2.f.orig	2017-02-01 18:19:11.502204263 -0500
++++ Fortran/test/tpih2.f	2017-02-01 18:19:15.114222695 -0500
+@@ -131,7 +131,7 @@
+       TRC(1) = NAXIS(1) + 0.5
+       TRC(2) = NAXIS(2) + 0.5
+ 
+-      DEVTYP = '/XWINDOW'
++      DEVTYP = '/null'
+       CALL PGBEG(0, DEVTYP, 1, 1)
+       CALL PGVSTD()
+ 
+--- Fortran/test/tprj2.f.orig	2017-02-01 18:19:21.386254700 -0500
++++ Fortran/test/tprj2.f	2017-02-01 18:19:25.471275546 -0500
+@@ -48,7 +48,7 @@
+  20   CONTINUE
+ 
+ *     PGPLOT initialization.
+-      CALL PGBEG (0, '/xwindow', 1, 1)
++      CALL PGBEG (0, '/null', 1, 1)
+ 
+ *     Define pen colours.
+       CALL PGSCR (0, 0.00, 0.00, 0.00)
+--- Fortran/test/twcsmix.f.orig	2017-02-01 18:19:30.966303587 -0500
++++ Fortran/test/twcsmix.f	2017-02-01 18:19:34.598322121 -0500
+@@ -89,7 +89,7 @@
+      :        '-----------------------------------------')
+ 
+ *     PGPLOT initialization.
+-      CALL PGBEG (0, '/xwindow', 1, 1)
++      CALL PGBEG (0, '/null', 1, 1)
+ 
+ *     Define pen colours.
+       CALL PGSCR (0, 0.00, 0.00, 0.00)
+--- Fortran/test/ttab2.f.orig	2017-02-01 18:19:38.726343186 -0500
++++ Fortran/test/ttab2.f	2017-02-01 18:19:41.987359826 -0500
+@@ -72,7 +72,7 @@
+ 
+ 
+ *     PGPLOT initialization.
+-      CALL PGBEG (0, '/xwindow', 1, 1)
++      CALL PGBEG (0, '/null', 1, 1)
+       CALL PGVSTD ()
+       CALL PGSCH (0.7)
+ 
