@@ -1,6 +1,6 @@
 {% set name = "wcslib" %}
-{% set version = "5.15" %}
-{% set sha256 = "8bbe40a7b055578d1a6b77e92a733d2a01ce439814ea9e5a8d8bbc23c68b56e8" %}
+{% set version = "5.16" %}
+{% set sha256 = "ed031e0cf1cec0e9cabfc650423efa526fec341441865001c1e2c56bfffc99ef" %}
 
 package:
   name: {{ name|lower }}
@@ -11,11 +11,10 @@ source:
   url: http://newton.cx/~peter/files/{{ name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
   patches:
-    - wcsfix-test.patch # fix non-reproducible test code in 5.15
     - no-x-tests.patch # avoid deluges of pgplot warnings
 
 build:
-  number: 1
+  number: 0
   detect_binary_files_with_prefix: true
   skip: true  # [win]
 
@@ -24,7 +23,7 @@ requirements:
     - cfitsio
     - flex
     - gcc  # [osx]
-    - libgfortran  # [not win]
+    - libgfortran  # [linux]
     - pgplot 5.2.*  # [not win]
     - toolchain
   run:
