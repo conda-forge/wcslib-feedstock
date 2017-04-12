@@ -22,3 +22,5 @@ make install
 
 cd $PREFIX
 rm -rf share/doc
+rm include/wcslib # this is a symlink
+mv include/wcslib-* include/wcslib
