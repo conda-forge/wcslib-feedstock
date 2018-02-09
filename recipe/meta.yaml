@@ -23,13 +23,13 @@ requirements:
     - cfitsio
     - flex
     - gcc  # [osx]
+    - giza 0.9.*  # [not win]
     - libgfortran  # [linux]
-    - pgplot 5.2.*  # [not win]
     - toolchain
   run:
     - cfitsio
+    - giza 0.9.*  # [not win]
     - libgfortran  # [not win]
-    - pgplot 5.2.*  # [not win]
 
 test:
   commands:
