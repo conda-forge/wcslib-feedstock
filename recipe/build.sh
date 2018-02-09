@@ -11,7 +11,7 @@ configure_args=(
     --with-cfitsiolib=$PREFIX/lib
     --with-cfitsioinc=$PREFIX/include
     --with-pgplotlib=$PREFIX/lib
-    --with-pgplotinc=$PREFIX/include/pgplot
+    --with-pgplotinc=$PREFIX/include
 )
 
 ./configure "${configure_args[@]}" || { cat config.log ; exit 1 ; }
