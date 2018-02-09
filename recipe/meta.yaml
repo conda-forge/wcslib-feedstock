@@ -1,6 +1,6 @@
 {% set name = "wcslib" %}
-{% set version = "5.17" %}
-{% set sha256 = "5c9cb5c86be01703f6488774ef3ea44fd6918a4dcdfddc70855905c05de8436c" %}
+{% set version = "5.18" %}
+{% set sha256 = "b693fbf14f2553507bc0c72bca531f23c59885be8f7d3c3cb889a5349129509a" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
     - no-x-tests.patch # avoid deluges of pgplot warnings
 
 build:
-  number: 1
+  number: 0
   detect_binary_files_with_prefix: true
   skip: true  # [win]
 
