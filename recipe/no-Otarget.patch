@@ -1,0 +1,66 @@
+diff --git a/pgsbox/GNUmakefile b/pgsbox/GNUmakefile
+index 32e8b0a..546cbe8 100644
+--- a/pgsbox/GNUmakefile
++++ b/pgsbox/GNUmakefile
+@@ -119,7 +119,7 @@ build : lib
+ lib :
+ 	-@ echo ''
+ 	-@ echo 'Building PGSBOX library...'
+-	 @ $(MAKE) --no-print-directory -Otarget $(PGSBOXLIB)
++	 @ $(MAKE) --no-print-directory $(PGSBOXLIB)
+ 
+ $(PGSBOXLIB) : $(LIBLOCK) $(MODULES:%=$(PGSBOXLIB)(%))
+ 	-@ echo ''
+@@ -132,7 +132,7 @@ $(PGSBOXLIB) : $(LIBLOCK) $(MODULES:%=$(PGSBOXLIB)(%))
+ 	       $(RM) *.o ; \
+ 	     fi
+ 	-@ $(RM) $<
+-	 @ $(MAKE) --no-print-directory -Otarget $(SHRLIB)
++	 @ $(MAKE) --no-print-directory $(SHRLIB)
+ 
+ $(SHRLIB) : $(PICLIB)
+ 	-@ echo ''
+diff --git a/C/GNUmakefile b/C/GNUmakefile
+index 4a46cdc..53aeead 100644
+--- a/C/GNUmakefile
++++ b/C/GNUmakefile
+@@ -248,7 +248,7 @@ build : lib
+ lib : $(FLEXMODS)
+ 	-@ echo ''
+ 	-@ echo 'Building WCSLIB C library...'
+-	 @ $(MAKE) --no-print-directory -Otarget $(WCSLIB)
++	 @ $(MAKE) --no-print-directory $(WCSLIB)
+ 
+ $(WCSLIB) : $(LIBLOCK) $(MODULES:%=$(WCSLIB)(%))
+ 	-@ echo ''
+@@ -261,7 +261,7 @@ $(WCSLIB) : $(LIBLOCK) $(MODULES:%=$(WCSLIB)(%))
+ 	       $(RM) *.o ; \
+ 	     fi
+ 	-@ $(RM) $<
+-	 @ $(MAKE) --no-print-directory -Otarget $(SHRLIB)
++	 @ $(MAKE) --no-print-directory $(SHRLIB)
+ 
+ $(SHRLIB) : $(PICLIB)
+ 	-@ echo ''
+diff --git a/Fortran/GNUmakefile b/Fortran/GNUmakefile
+index b002cc1..3501f72 100644
+--- a/Fortran/GNUmakefile
++++ b/Fortran/GNUmakefile
+@@ -247,7 +247,7 @@ lib :
+ 	 @ $(MAKE) -C ../C lib
+ 	-@ echo ''
+ 	-@ echo 'Building WCSLIB Fortran wrappers...'
+-	 @ $(MAKE) --no-print-directory -Otarget $(WCSLIB)
++	 @ $(MAKE) --no-print-directory $(WCSLIB)
+ 
+ $(WCSLIB) : $(LIBLOCK) $(MODULES:%=$(WCSLIB)(%))
+ 	-@ echo ''
+@@ -260,7 +260,7 @@ $(WCSLIB) : $(LIBLOCK) $(MODULES:%=$(WCSLIB)(%))
+ 	       $(RM) *.o ; \
+ 	     fi
+ 	-@ $(RM) $<
+-	 @ $(MAKE) --no-print-directory -Otarget $(SHRLIB)
++	 @ $(MAKE) --no-print-directory $(SHRLIB)
+ 
+ $(SHRLIB) : $(PICLIB)
+ 	-@ echo ''

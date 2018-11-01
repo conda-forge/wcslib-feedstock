@@ -11,6 +11,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - no-x-tests.patch # avoid deluges of pgplot warnings
+    - no-Otarget.patch
 
 build:
   number: 1000
