@@ -3,7 +3,11 @@
 IFS=$' \t\n' # workaround bad conda/toolchain interaction
 set -e
 
-export LDFLAGS="-Wl,-rpath,$PREFIX/lib $LDFLAGS"
+if [[ $(uname) == Darwin ]] ; then
+    export LDFLAGS="-Wl,-rpath,$PREFIX/lib $LDFLAGS"
+else
+    export LDFLAGS="-Wl,-rpath-link,$PREFIX/lib $LDFLAGS"
+fi
 
 configure_args=(
     --prefix=$PREFIX
