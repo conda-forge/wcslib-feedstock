@@ -1,20 +1,19 @@
 {% set name = "wcslib" %}
-{% set version = "5.20" %}
-{% set sha256 = "0bc037db498cbd8e17ecaedd72fad15d6810ae885793882d5736f746f64c0fb1" %}
+{% set version = "7.2" %}
+{% set sha256 = "63959eb4859517a1ecca48c91542318bebeed62e4a1663656de9a983af376e39" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://newton.cx/~peter/files/{{ name }}-{{ version }}.tar.bz2
+  url: ftp://ftp.atnf.csiro.au/pub/software/{{ name }}/{{ name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
   patches:
-    - no-x-tests.patch # avoid deluges of pgplot warnings
-    - no-Otarget.patch
+    - no-x-tests.patch  # avoid deluges of pgplot warnings
 
 build:
-  number: 1002
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -36,7 +35,7 @@ test:
 
 about:
   home: http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
-  license: LGPL
+  license: LGPL-3.0-or-later
   license_file: COPYING.LESSER
   summary: 'Library for World Coordinate System computations'
 
