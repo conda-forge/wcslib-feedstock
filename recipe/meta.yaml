@@ -10,8 +10,7 @@ source:
   url: ftp://ftp.atnf.csiro.au/pub/software/{{ name }}/{{ name }}-{{ version }}.tar.bz2
   sha256: {{ sha256 }}
   patches:
-    - no-x-tests.patch # avoid deluges of pgplot warnings
-    - no-Otarget.patch
+    - no-x-tests.patch  # avoid deluges of pgplot warnings
 
 build:
   number: 0
