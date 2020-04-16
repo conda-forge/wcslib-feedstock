@@ -36,7 +36,7 @@ test:
 
 about:
   home: http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
-  license: LGPL
+  license: LGPL-3.0-or-later
   license_file: COPYING.LESSER
   summary: 'Library for World Coordinate System computations'
 
