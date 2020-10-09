@@ -1,6 +1,5 @@
 {% set name = "wcslib" %}
-{% set version = "7.2" %}
-{% set sha256 = "63959eb4859517a1ecca48c91542318bebeed62e4a1663656de9a983af376e39" %}
+{% set version = "7.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +7,12 @@ package:
 
 source:
   url: ftp://ftp.atnf.csiro.au/pub/software/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-  sha256: {{ sha256 }}
+  sha256: 4b01cf425382a26ca4f955ed6841a5f50c55952a2994367f8e067e4183992961
   patches:
     - no-x-tests.patch  # avoid deluges of pgplot warnings
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
