@@ -1,4 +1,6 @@
 #! /bin/bash
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./config
 
 IFS=$' \t\n' # workaround bad conda/toolchain interaction
 set -e
@@ -20,7 +22,9 @@ configure_args=(
 
 ./configure "${configure_args[@]}" || { cat config.log ; exit 1 ; }
 make # note: Makefile is not parallel-safe
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
 make check
+fi
 mkdir -p $PREFIX/share/man/man1
 make install
 
