@@ -1,0 +1,47 @@
+--- configure.orig	2021-01-11 08:37:26.000000000 -0800
++++ configure	2021-01-11 09:00:06.000000000 -0800
+@@ -7541,8 +7541,6 @@
+ if eval \${$as_ac_File+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  test "$cross_compiling" = yes &&
+-  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+ if test -r "$LIBDIR"; then
+   eval "$as_ac_File=yes"
+ else
+@@ -7579,8 +7577,6 @@
+ if eval \${$as_ac_File+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  test "$cross_compiling" = yes &&
+-  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+ if test -r "$INCDIR/cfitsio/fitsio.h"; then
+   eval "$as_ac_File=yes"
+ else
+@@ -7600,8 +7596,6 @@
+ if eval \${$as_ac_File+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  test "$cross_compiling" = yes &&
+-  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+ if test -r "$INCDIR/fitsio.h"; then
+   eval "$as_ac_File=yes"
+ else
+@@ -7794,8 +7788,6 @@
+ if eval \${$as_ac_File+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  test "$cross_compiling" = yes &&
+-  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+ if test -r "$INCDIR/pgplot/cpgplot.h"; then
+   eval "$as_ac_File=yes"
+ else
+@@ -7815,8 +7807,6 @@
+ if eval \${$as_ac_File+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  test "$cross_compiling" = yes &&
+-  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+ if test -r "$INCDIR/cpgplot.h"; then
+   eval "$as_ac_File=yes"
+ else

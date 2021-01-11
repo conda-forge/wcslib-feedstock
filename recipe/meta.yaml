@@ -10,13 +10,15 @@ source:
   sha256: 4b01cf425382a26ca4f955ed6841a5f50c55952a2994367f8e067e4183992961
   patches:
     - no-x-tests.patch  # avoid deluges of pgplot warnings
+    - cross-compiling-configure.patch  # [build_platform != target_platform]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
+    - gnuconfig  # [unix]
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
     - flex
