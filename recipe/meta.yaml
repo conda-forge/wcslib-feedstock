@@ -22,6 +22,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
     - flex
+    - make
+
   host:
     - cfitsio
     - pgplot 5.2.*  # [not win]
