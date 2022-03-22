@@ -22,7 +22,7 @@ configure_args=(
 
 ./configure "${configure_args[@]}" || { cat config.log ; exit 1 ; }
 make # note: Makefile is not parallel-safe
-if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 make check
 fi
 mkdir -p $PREFIX/share/man/man1
