@@ -1,50 +1,60 @@
---- pgsbox/pgtest.f.orig	2017-02-01 18:15:05.237076214 -0500
-+++ pgsbox/pgtest.f	2017-02-01 18:15:38.543212580 -0500
-@@ -60,7 +60,7 @@
-       TRC(2) = NAXIS(2) + 0.5
+diff --git a/pgsbox/pgtest.f b/pgsbox/pgtest.f
+index f086f83..45e414f 100644
+--- a/pgsbox/pgtest.f
++++ b/pgsbox/pgtest.f
+@@ -57,7 +57,7 @@
+       ESCAPE = CHAR(92)
  
- *      CALL PGBEG (0, '?', 1, 1)
+ *     CALL PGBEG (0, '?', 1, 1)
 -      call pgbeg (0, '/xw', 1, 1)
 +      call pgbeg (0, '/null', 1, 1)
  
        CALL PGQINF ('TYPE', DEVTYP, J)
        IF (DEVTYP.EQ.'PS'  .OR.
---- pgsbox/cpgtest.c.orig	2017-02-01 18:16:35.922447509 -0500
-+++ pgsbox/cpgtest.c	2017-02-01 18:16:41.646470944 -0500
-@@ -68,7 +68,7 @@
-   trc[0] = naxis[0] + 0.5f;
+diff --git a/pgsbox/cpgtest.c b/pgsbox/cpgtest.c
+index b069e6a..12d7982 100644
+--- a/pgsbox/cpgtest.c
++++ b/pgsbox/cpgtest.c
+@@ -63,7 +63,7 @@ int main()
    trc[1] = naxis[1] + 0.5f;
  
+   char devtyp[16];
 -  strcpy(devtyp, "/XWINDOW");
 +  strcpy(devtyp, "/NULL");
    cpgbeg(0, devtyp, 1, 1);
  
-   j = 16;
---- C/test/ttab3.c.orig	2017-02-01 18:17:02.905557986 -0500
-+++ C/test/ttab3.c	2017-02-01 18:17:12.392596829 -0500
-@@ -74,7 +74,7 @@
+   int nchr = 16;
+diff --git a/C/test/ttab3.c b/C/test/ttab3.c
+index bb32387..280d8b3 100644
+--- a/C/test/ttab3.c
++++ b/C/test/ttab3.c
+@@ -71,7 +71,7 @@ int main()
  
  
-   /* PGPLOT initialization. */
+   // PGPLOT initialization.
 -  strcpy(text, "/xwindow");
 +  strcpy(text, "/null");
    cpgbeg(0, text, 1, 1);
    cpgvstd();
    cpgsch(0.7f);
---- C/test/tcel2.c.orig	2017-02-01 18:17:23.881655083 -0500
-+++ C/test/tcel2.c	2017-02-01 18:17:28.515678730 -0500
-@@ -106,7 +106,7 @@
+diff --git a/C/test/tcel2.c b/C/test/tcel2.c
+index 97d68a0..ad27d88 100644
+--- a/C/test/tcel2.c
++++ b/C/test/tcel2.c
+@@ -103,7 +103,7 @@ int main()
  
  
-   /* PGPLOT initialization. */
+   // PGPLOT initialization.
 -  strcpy(text, "/xwindow");
 +  strcpy(text, "/null");
    cpgbeg(0, text, 1, 1);
  
-   /* Define pen colours. */
---- C/test/tpih2.c.orig	2017-02-01 18:17:35.548714619 -0500
-+++ C/test/tpih2.c	2017-02-01 18:17:40.353739139 -0500
-@@ -147,7 +147,7 @@
+   // Define pen colours.
+diff --git a/C/test/tpih2.c b/C/test/tpih2.c
+index cd493cf..6241137 100644
+--- a/C/test/tpih2.c
++++ b/C/test/tpih2.c
+@@ -144,7 +144,7 @@ int main()
    trc[0] = naxis[0] + 0.5f;
    trc[1] = naxis[1] + 0.5f;
  
@@ -53,64 +63,76 @@
    cpgbeg(0, devtyp, 1, 1);
    cpgvstd();
  
---- C/test/tspc.c.orig	2017-02-01 18:17:45.313764450 -0500
-+++ C/test/tspc.c	2017-02-01 18:17:53.252804962 -0500
-@@ -69,7 +69,7 @@
+diff --git a/C/test/tspc.c b/C/test/tspc.c
+index 1593354..a0b715d 100644
+--- a/C/test/tspc.c
++++ b/C/test/tspc.c
+@@ -67,7 +67,7 @@ int main()
  
- 
-   /* PGPLOT initialization. */
+   // PGPLOT initialization.
+   char text[80];
 -  strcpy(text, "/xwindow");
 +  strcpy(text, "/null");
    cpgbeg(0, text, 1, 1);
  
-   naxisj = NSPEC;
---- C/test/tcel1.c.orig	2017-02-01 18:17:59.633837524 -0500
-+++ C/test/tcel1.c	2017-02-01 18:18:03.312856298 -0500
-@@ -80,7 +80,7 @@
+   int    naxisj = NSPEC;
+diff --git a/C/test/tcel1.c b/C/test/tcel1.c
+index 70d90bd..f376b52 100644
+--- a/C/test/tcel1.c
++++ b/C/test/tcel1.c
+@@ -77,7 +77,7 @@ int main()
  
  
-   /* PGPLOT initialization. */
+   // PGPLOT initialization.
 -  strcpy(text, "/xwindow");
 +  strcpy(text, "/null");
    cpgbeg(0, text, 1, 1);
  
-   /* Define pen colours. */
---- C/test/ttab2.c.orig	2017-02-01 18:18:09.820889508 -0500
-+++ C/test/ttab2.c	2017-02-01 18:18:14.562913706 -0500
-@@ -77,7 +77,7 @@
+   // Define pen colours.
+diff --git a/C/test/ttab2.c b/C/test/ttab2.c
+index 3d36a69..7e26f99 100644
+--- a/C/test/ttab2.c
++++ b/C/test/ttab2.c
+@@ -74,7 +74,7 @@ int main()
  
  
-   /* PGPLOT initialization. */
+   // PGPLOT initialization.
 -  strcpy(text, "/xwindow");
 +  strcpy(text, "/null");
    cpgbeg(0, text, 1, 1);
    cpgvstd();
    cpgsch(0.7f);
---- C/test/tprj2.c.orig	2017-02-01 18:18:19.942941160 -0500
-+++ C/test/tprj2.c	2017-02-01 18:18:22.991956719 -0500
-@@ -60,7 +60,7 @@
+diff --git a/C/test/tprj2.c b/C/test/tprj2.c
+index 190fcc0..dd2b0a9 100644
+--- a/C/test/tprj2.c
++++ b/C/test/tprj2.c
+@@ -62,7 +62,7 @@ int main()
  
  
-   /* PGPLOT initialization. */
+   // PGPLOT initialization.
 -  strcpy(text, "/xwindow");
 +  strcpy(text, "/null");
    cpgbeg(0, text, 1, 1);
  
-   /* Define pen colours. */
---- C/test/twcsmix.c.orig	2017-02-01 18:18:28.752986117 -0500
-+++ C/test/twcsmix.c	2017-02-01 18:18:32.798006758 -0500
-@@ -93,7 +93,7 @@
+   // Define pen colours.
+diff --git a/C/test/twcsmix.c b/C/test/twcsmix.c
+index b2a3ba2..0e63248 100644
+--- a/C/test/twcsmix.c
++++ b/C/test/twcsmix.c
+@@ -90,7 +90,7 @@ int main()
  
  
-   /* PGPLOT initialization. */
+   // PGPLOT initialization.
 -  strcpy(text, "/xwindow");
 +  strcpy(text, "/null");
    cpgbeg(0, text, 1, 1);
  
-   /* Define pen colours. */
---- Fortran/test/ttab3.f.orig	2017-02-01 18:18:44.853068274 -0500
-+++ Fortran/test/ttab3.f	2017-02-01 18:18:49.710093059 -0500
-@@ -67,7 +67,7 @@
+   // Define pen colours.
+diff --git a/Fortran/test/ttab3.f b/Fortran/test/ttab3.f
+index b613aec..e909d49 100644
+--- a/Fortran/test/ttab3.f
++++ b/Fortran/test/ttab3.f
+@@ -65,7 +65,7 @@
  
  
  *     PGPLOT initialization.
@@ -119,9 +141,11 @@
        CALL PGVSTD ()
        CALL PGSCH (0.7)
        CALL PGWNAD (-135.0, 135.0, -95.0, 140.0)
---- Fortran/test/tspc.f.orig	2017-02-01 18:18:54.428117135 -0500
-+++ Fortran/test/tspc.f	2017-02-01 18:18:59.610143579 -0500
-@@ -55,7 +55,7 @@
+diff --git a/Fortran/test/tspc.f b/Fortran/test/tspc.f
+index fc27ba2..e85cc73 100644
+--- a/Fortran/test/tspc.f
++++ b/Fortran/test/tspc.f
+@@ -53,7 +53,7 @@
        NFAIL = 0
  
  *     PGPLOT initialization.
@@ -130,9 +154,11 @@
  
        NAXISJ = NSPEC
        CRPIXJ = NAXISJ/2 + 1
---- Fortran/test/tcel1.f.orig	2017-02-01 18:19:03.945165700 -0500
-+++ Fortran/test/tcel1.f	2017-02-01 18:19:06.830180422 -0500
-@@ -77,7 +77,7 @@
+diff --git a/Fortran/test/tcel1.f b/Fortran/test/tcel1.f
+index 653f294..cb693b4 100644
+--- a/Fortran/test/tcel1.f
++++ b/Fortran/test/tcel1.f
+@@ -75,7 +75,7 @@
  
  
  *     PGPLOT initialization.
@@ -141,9 +167,11 @@
  
  *     Define pen colours.
        CALL PGSCR (0, 0.00, 0.00, 0.00)
---- Fortran/test/tpih2.f.orig	2017-02-01 18:19:11.502204263 -0500
-+++ Fortran/test/tpih2.f	2017-02-01 18:19:15.114222695 -0500
-@@ -131,7 +131,7 @@
+diff --git a/Fortran/test/tpih2.f b/Fortran/test/tpih2.f
+index c51ca97..f6f1a08 100644
+--- a/Fortran/test/tpih2.f
++++ b/Fortran/test/tpih2.f
+@@ -129,7 +129,7 @@
        TRC(1) = NAXIS(1) + 0.5
        TRC(2) = NAXIS(2) + 0.5
  
@@ -152,9 +180,11 @@
        CALL PGBEG(0, DEVTYP, 1, 1)
        CALL PGVSTD()
  
---- Fortran/test/tprj2.f.orig	2017-02-01 18:19:21.386254700 -0500
-+++ Fortran/test/tprj2.f	2017-02-01 18:19:25.471275546 -0500
-@@ -48,7 +48,7 @@
+diff --git a/Fortran/test/tprj2.f b/Fortran/test/tprj2.f
+index 37ebec0..fc31cc2 100644
+--- a/Fortran/test/tprj2.f
++++ b/Fortran/test/tprj2.f
+@@ -46,7 +46,7 @@
   20   CONTINUE
  
  *     PGPLOT initialization.
@@ -163,9 +193,11 @@
  
  *     Define pen colours.
        CALL PGSCR (0, 0.00, 0.00, 0.00)
---- Fortran/test/twcsmix.f.orig	2017-02-01 18:19:30.966303587 -0500
-+++ Fortran/test/twcsmix.f	2017-02-01 18:19:34.598322121 -0500
-@@ -89,7 +89,7 @@
+diff --git a/Fortran/test/twcsmix.f b/Fortran/test/twcsmix.f
+index 0cc2332..dfa84fb 100644
+--- a/Fortran/test/twcsmix.f
++++ b/Fortran/test/twcsmix.f
+@@ -87,7 +87,7 @@
       :        '-----------------------------------------')
  
  *     PGPLOT initialization.
@@ -174,9 +206,11 @@
  
  *     Define pen colours.
        CALL PGSCR (0, 0.00, 0.00, 0.00)
---- Fortran/test/ttab2.f.orig	2017-02-01 18:19:38.726343186 -0500
-+++ Fortran/test/ttab2.f	2017-02-01 18:19:41.987359826 -0500
-@@ -72,7 +72,7 @@
+diff --git a/Fortran/test/ttab2.f b/Fortran/test/ttab2.f
+index a47a96a..b3a1758 100644
+--- a/Fortran/test/ttab2.f
++++ b/Fortran/test/ttab2.f
+@@ -70,7 +70,7 @@
  
  
  *     PGPLOT initialization.

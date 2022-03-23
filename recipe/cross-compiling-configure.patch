@@ -1,6 +1,8 @@
---- configure.orig	2021-01-11 08:37:26.000000000 -0800
-+++ configure	2021-01-11 09:00:06.000000000 -0800
-@@ -7541,8 +7541,6 @@
+diff --git a/configure b/configure
+index fa2fced..414a81a 100755
+--- a/configure
++++ b/configure
+@@ -7566,8 +7566,6 @@ $as_echo_n "checking for $LIBDIR... " >&6; }
  if eval \${$as_ac_File+:} false; then :
    $as_echo_n "(cached) " >&6
  else
@@ -9,7 +11,7 @@
  if test -r "$LIBDIR"; then
    eval "$as_ac_File=yes"
  else
-@@ -7579,8 +7577,6 @@
+@@ -7604,8 +7602,6 @@ $as_echo_n "checking for $INCDIR/cfitsio/fitsio.h... " >&6; }
  if eval \${$as_ac_File+:} false; then :
    $as_echo_n "(cached) " >&6
  else
@@ -18,7 +20,7 @@
  if test -r "$INCDIR/cfitsio/fitsio.h"; then
    eval "$as_ac_File=yes"
  else
-@@ -7600,8 +7596,6 @@
+@@ -7625,8 +7621,6 @@ $as_echo_n "checking for $INCDIR/fitsio.h... " >&6; }
  if eval \${$as_ac_File+:} false; then :
    $as_echo_n "(cached) " >&6
  else
@@ -27,7 +29,7 @@
  if test -r "$INCDIR/fitsio.h"; then
    eval "$as_ac_File=yes"
  else
-@@ -7794,8 +7788,6 @@
+@@ -7819,8 +7813,6 @@ $as_echo_n "checking for $INCDIR/pgplot/cpgplot.h... " >&6; }
  if eval \${$as_ac_File+:} false; then :
    $as_echo_n "(cached) " >&6
  else
@@ -36,7 +38,7 @@
  if test -r "$INCDIR/pgplot/cpgplot.h"; then
    eval "$as_ac_File=yes"
  else
-@@ -7815,8 +7807,6 @@
+@@ -7840,8 +7832,6 @@ $as_echo_n "checking for $INCDIR/cpgplot.h... " >&6; }
  if eval \${$as_ac_File+:} false; then :
    $as_echo_n "(cached) " >&6
  else
