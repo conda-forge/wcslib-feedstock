@@ -13,8 +13,11 @@ source:
     - cross-compiling-configure.patch  # [build_platform != target_platform]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
+    # changes soname at major versions
+    # https://abi-laboratory.pro/tracker/timeline/wcslib
+    - {{ pin_subpackage(name, max_pin='x') }}
 
 requirements:
   build:
