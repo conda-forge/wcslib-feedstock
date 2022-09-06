@@ -25,13 +25,13 @@ index b069e6a..12d7982 100644
  
    int nchr = 16;
 diff --git a/C/test/ttab3.c b/C/test/ttab3.c
-index bb32387..280d8b3 100644
+index 584d36a..2270cf7 100644
 --- a/C/test/ttab3.c
 +++ b/C/test/ttab3.c
-@@ -71,7 +71,7 @@ int main()
- 
+@@ -65,7 +65,7 @@ int main()
  
    // PGPLOT initialization.
+   char text[80];
 -  strcpy(text, "/xwindow");
 +  strcpy(text, "/null");
    cpgbeg(0, text, 1, 1);
@@ -90,13 +90,13 @@ index 70d90bd..f376b52 100644
  
    // Define pen colours.
 diff --git a/C/test/ttab2.c b/C/test/ttab2.c
-index 3d36a69..7e26f99 100644
+index 1e1b549..387bff4 100644
 --- a/C/test/ttab2.c
 +++ b/C/test/ttab2.c
-@@ -74,7 +74,7 @@ int main()
- 
+@@ -67,7 +67,7 @@ int main()
  
    // PGPLOT initialization.
+   char text[80];
 -  strcpy(text, "/xwindow");
 +  strcpy(text, "/null");
    cpgbeg(0, text, 1, 1);
