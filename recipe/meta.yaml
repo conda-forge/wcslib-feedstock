@@ -1,13 +1,13 @@
 {% set name = "wcslib" %}
-{% set version = "7.11" %}
+{% set version = "7.12" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: ftp://ftp.atnf.csiro.au/pub/software/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-  sha256: 46befbfdf50cd4953896676a7d570094dc7661e2ae9677b092e7fb13cee3da5f
+  url: https://www.atnf.csiro.au/people/mcalabre/WCS/{{ name }}-{{ version }}.tar.bz2
+  sha256: 9cf8de50e109a97fa04511d4111e8d14bd0a44077132acf73e6cf0029fe96bd4
   patches:
     - no-x-tests.patch  # avoid deluges of pgplot warnings
     - cross-compiling-configure.patch  # [build_platform != target_platform]
