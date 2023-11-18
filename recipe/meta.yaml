@@ -1,5 +1,5 @@
 {% set name = "wcslib" %}
-{% set version = "8.2" %}
+{% set version = "8.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://www.atnf.csiro.au/people/mcalabre/WCS/{{ name }}-{{ version }}.tar.bz2
-  sha256: 2afda1cf2db50cd09c2f00f23fedf84b7a0cd8fc596711d7844bcaf03f5cdfd7
+  sha256: b666c79568fc0cf16b6d585ff3d560ae5e472c3b1125a90ccc8038f8e84aca19
   patches:
     - no-x-tests.patch  # avoid deluges of pgplot warnings
     - cross-compiling-configure.patch  # [build_platform != target_platform]
