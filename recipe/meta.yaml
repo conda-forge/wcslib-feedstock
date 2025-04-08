@@ -13,7 +13,7 @@ source:
     - cross-compiling-configure.patch  # [build_platform != target_platform]
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win]
   run_exports:
     # changes soname at major versions
