@@ -3,7 +3,7 @@ About wcslib-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/wcslib-feedstock/blob/main/LICENSE.txt)
 
-Home: http://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
+Home: https://www.atnf.csiro.au/computing/software/wcs/
 
 Package license: LGPL-3.0-or-later
 
