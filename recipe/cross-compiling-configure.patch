@@ -1,8 +1,8 @@
 diff --git a/configure b/configure
-index ecf92e7..bf51058 100755
+index 81551e8..36c41f8 100755
 --- a/configure
 +++ b/configure
-@@ -7815,8 +7815,6 @@ if eval test \${$as_ac_File+y}
+@@ -7432,8 +7432,6 @@ if eval test \${$as_ac_File+y}
  then :
    printf %s "(cached) " >&6
  else $as_nop
@@ -11,7 +11,7 @@ index ecf92e7..bf51058 100755
  if test -r "$LIBDIR"; then
    eval "$as_ac_File=yes"
  else
-@@ -7855,8 +7853,6 @@ if eval test \${$as_ac_File+y}
+@@ -7472,8 +7470,6 @@ if eval test \${$as_ac_File+y}
  then :
    printf %s "(cached) " >&6
  else $as_nop
@@ -20,7 +20,7 @@ index ecf92e7..bf51058 100755
  if test -r "$INCDIR/cfitsio/fitsio.h"; then
    eval "$as_ac_File=yes"
  else
-@@ -7878,8 +7874,6 @@ if eval test \${$as_ac_File+y}
+@@ -7495,8 +7491,6 @@ if eval test \${$as_ac_File+y}
  then :
    printf %s "(cached) " >&6
  else $as_nop
@@ -29,7 +29,7 @@ index ecf92e7..bf51058 100755
  if test -r "$INCDIR/fitsio.h"; then
    eval "$as_ac_File=yes"
  else
-@@ -8074,8 +8068,6 @@ if eval test \${$as_ac_File+y}
+@@ -7695,8 +7689,6 @@ if eval test \${$as_ac_File+y}
  then :
    printf %s "(cached) " >&6
  else $as_nop
@@ -38,7 +38,7 @@ index ecf92e7..bf51058 100755
  if test -r "$INCDIR/pgplot/cpgplot.h"; then
    eval "$as_ac_File=yes"
  else
-@@ -8097,8 +8089,6 @@ if eval test \${$as_ac_File+y}
+@@ -7718,8 +7710,6 @@ if eval test \${$as_ac_File+y}
  then :
    printf %s "(cached) " >&6
  else $as_nop
