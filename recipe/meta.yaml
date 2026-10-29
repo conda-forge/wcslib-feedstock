@@ -3,7 +3,7 @@
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://www.atnf.csiro.au/computing/software/wcs/wcslib-releases/{{ name }}-{{ version }}.tar.bz2
